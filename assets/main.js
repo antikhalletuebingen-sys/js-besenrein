@@ -39,6 +39,58 @@ function submitForm(e) {
   }, 1200);
 }
 
+// HERO IMAGE CAROUSEL
+document.querySelectorAll('.hero-carousel').forEach(carousel => {
+  const track = carousel.querySelector('.hero-carousel-track');
+  const slides = track.children;
+  const prevBtn = carousel.querySelector('.hero-carousel-prev');
+  const nextBtn = carousel.querySelector('.hero-carousel-next');
+  const dotsWrap = carousel.querySelector('.hero-carousel-dots');
+  let index = 0;
+  let timer;
+
+  if (slides.length <= 1) {
+    prevBtn?.remove();
+    nextBtn?.remove();
+    dotsWrap?.remove();
+    return;
+  }
+
+  const dots = [...slides].map((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'hero-carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Bild ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+    return dot;
+  });
+
+  function goTo(i) {
+    index = (i + slides.length) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d, di) => d.classList.toggle('active', di === index));
+  }
+
+  function restartAutoplay() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(index + 1), 5000);
+  }
+
+  prevBtn.addEventListener('click', () => { goTo(index - 1); restartAutoplay(); });
+  nextBtn.addEventListener('click', () => { goTo(index + 1); restartAutoplay(); });
+  carousel.addEventListener('mouseenter', () => clearInterval(timer));
+  carousel.addEventListener('mouseleave', restartAutoplay);
+
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => touchStartX = e.touches[0].clientX, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) { goTo(index + (dx < 0 ? 1 : -1)); restartAutoplay(); }
+  }, { passive: true });
+
+  restartAutoplay();
+});
+
 // SCROLL-IN ANIMATIONS
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
