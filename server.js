@@ -8,6 +8,12 @@ const app = express();
 app.use(express.json({ limit: '32kb' }));
 app.use(express.urlencoded({ extended: true, limit: '32kb' }));
 
+// --- Health-Check: im Browser aufrufbar, um zu prüfen ob Node läuft ---
+// https://js-besenrein.de/api/health  ->  {"ok":true,...}
+app.get('/api/health', (req, res) => {
+  res.json({ ok: true, service: 'js-besenrein', smtp: !!process.env.SMTP_HOST });
+});
+
 // --- Statische Website ausliefern (alle HTML-Seiten, assets/ usw.) ---
 // extensions: ['html'] => /kontakt funktioniert auch ohne .html
 app.use(express.static(__dirname, { extensions: ['html'] }));
