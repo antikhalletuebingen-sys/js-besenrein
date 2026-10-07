@@ -42,11 +42,33 @@
   "priceRange": "€€",
   "openingHours": "Mo-Sa 07:00-18:00"
 }</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-346443916"></script>
+<!-- Consent Mode v2 Default -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+  try {
+    if (localStorage.getItem('jsb_consent') === 'granted') {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+  } catch (e) {}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-346443916"></script>
+<script>
   gtag('js', new Date());
   gtag('config', 'AW-346443916');
 </script>
@@ -176,9 +198,19 @@
       <div class="footer-bottom-links">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutzerklärung</a>
+        <a href="#" class="cookie-settings-link">Cookie-Einstellungen</a>
       </div>
     </div>
   </footer>
   <script src="assets/main.js"></script>
+  <script src="assets/consent.js"></script>
+<script>
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href^="tel:"]');
+    if (link && typeof gtag === 'function') {
+      gtag('event', 'conversion', { 'send_to': 'AW-346443916/xNanCOuylvkZEIyhmaUB' });
+    }
+  });
+</script>
 </body>
 </html>
