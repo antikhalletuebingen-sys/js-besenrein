@@ -23,11 +23,33 @@
   <link rel="stylesheet" href="assets/style.css" />
   
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Welche Leistungen bieten Sie an?","acceptedAnswer":{"@type":"Answer","text":"Wir bieten Haushaltsauflösungen, Entrümpelungen, Nachlassankäufe, Gewerbeauflösungen und die fachgerechte Entsorgung von Sperrmüll und Sondermüll an. Alle Details finden Sie auf unserer <a href='leistungen.html' style='color:var(--gold);text-decoration:underline;'>Leistungsseite</a>."}},{"@type":"Question","name":"In welchen Regionen sind Sie tätig?","acceptedAnswer":{"@type":"Answer","text":"Unser Hauptgebiet ist Tübingen und Umgebung. Wir arbeiten auch in Reutlingen, Rottenburg, Mössingen, Herrenberg und weiteren Orten im Umkreis von 20–30 km. Eine vollständige Übersicht finden Sie auf der <a href='einsatzgebiete.html' style='color:var(--gold);text-decoration:underline;'>Einsatzgebiete-Seite</a>."}},{"@type":"Question","name":"Wie läuft eine Haushaltsauflösung ab?","acceptedAnswer":{"@type":"Answer","text":"<ol><li>Sie kontaktieren uns für eine unverbindliche Besichtigung.</li><li>Wir erstellen ein transparentes Angebot.</li><li>Nach Ihrer Zustimmung führen wir die Auflösung schnell und zuverlässig durch.</li><li>Auf Wunsch erfolgt eine besenreine Übergabe der Immobilie.</li></ol>"}},{"@type":"Question","name":"Was passiert mit nicht verwertbaren Gegenständen?","acceptedAnswer":{"@type":"Answer","text":"Nicht verwertbare Gegenstände entsorgen wir fachgerecht und umweltbewusst. Gut erhaltene Möbel und Haushaltsgegenstände geben wir dagegen günstig in unserer Antikhalle weiter, damit sie ein zweites Leben bekommen und jemand anderen glücklich machen. Zu sehen auf Instagram unter <a href='https://www.instagram.com/antikhalle_tuebingen' target='_blank' rel='noopener' style='color:var(--gold);'>@antikhalle_tuebingen</a>."}},{"@type":"Question","name":"Wie lange dauert eine Entrümpelung?","acceptedAnswer":{"@type":"Answer","text":"Die Dauer hängt von der Größe der Immobilie und dem Umfang der Räumung ab. Eine durchschnittliche Wohnungsauflösung dauert in der Regel 1–2 Tage."}},{"@type":"Question","name":"Was kostet eine Haushaltsauflösung oder Entrümpelung?","acceptedAnswer":{"@type":"Answer","text":"Die Kosten variieren je nach Umfang der Arbeiten, Größe der Immobilie und benötigter Zeit. Wir erstellen Ihnen nach der Besichtigung ein individuelles und transparentes Angebot – die Besichtigung selbst ist kostenlos und unverbindlich."}},{"@type":"Question","name":"Muss ich bei der Räumung anwesend sein?","acceptedAnswer":{"@type":"Answer","text":"Nein, Ihre Anwesenheit ist nicht erforderlich. Nach vorheriger Absprache können wir die Räumung eigenständig durchführen."}},{"@type":"Question","name":"Was passiert, wenn ich kurzfristig einen Termin benötige?","acceptedAnswer":{"@type":"Answer","text":"Kein Problem! Kontaktieren Sie uns einfach, und wir versuchen, auch kurzfristige Anfragen schnell zu bearbeiten. Rufen Sie uns an oder schreiben Sie uns via WhatsApp für eine schnelle Antwort."}}]}</script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-346443916"></script>
+  <!-- Consent Mode v2 Default -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('set', 'url_passthrough', true);
+    try {
+      if (localStorage.getItem('jsb_consent') === 'granted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+    } catch (e) {}
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-346443916"></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'AW-346443916');
   </script>
@@ -182,9 +204,19 @@
       <div class="footer-bottom-links">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutzerklärung</a>
+        <a href="#" class="cookie-settings-link">Cookie-Einstellungen</a>
       </div>
     </div>
   </footer>
   <script src="assets/main.js"></script>
+  <script src="assets/consent.js"></script>
+<script>
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href^="tel:"]');
+    if (link && typeof gtag === 'function') {
+      gtag('event', 'conversion', { 'send_to': 'AW-346443916/xNanCOuylvkZEIyhmaUB' });
+    }
+  });
+</script>
 </body>
 </html>

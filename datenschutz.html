@@ -1,6 +1,37 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+<!-- Consent Mode v2 Default -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+  try {
+    if (localStorage.getItem('jsb_consent') === 'granted') {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+  } catch (e) {}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-346443916"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'AW-346443916');
+</script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" media="(prefers-color-scheme: light)" />
@@ -68,9 +99,21 @@
     <p><strong>Wie erfassen wir Ihre Daten?</strong><br>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen, z.B. über ein Kontaktformular. Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst.</p>
     <h2>3. Kontaktformular</h2>
     <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist.</p>
-    <h2>4. Ihre Rechte</h2>
+    <p>Die Verarbeitung der Daten aus dem Kontaktformular erfolgt zur Bearbeitung Ihrer Anfrage und ggf. zur Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO) sowie auf Grundlage unseres berechtigten Interesses an der effektiven Bearbeitung von Anfragen (Art. 6 Abs. 1 lit. f DSGVO). Für die technische Übermittlung Ihrer Anfrage per E-Mail nutzen wir einen Versanddienstleister (siehe Abschnitt „Hosting und E-Mail-Versand"). Die Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern oder der Zweck der Speicherung entfällt; gesetzliche Aufbewahrungsfristen bleiben unberührt.</p>
+    <h2>4. Hosting und E-Mail-Versand</h2>
+    <p><strong>Server für das Kontaktformular (Railway):</strong> Die Server-Anwendung, die Ihre Formularanfrage entgegennimmt und weiterleitet, wird bei Railway Corporation, San Francisco, USA, betrieben. Dabei werden die von Ihnen eingegebenen Daten sowie technische Verbindungsdaten (z. B. IP-Adresse, Zeitpunkt der Anfrage) verarbeitet. Rechtsgrundlage ist unser berechtigtes Interesse an einer zuverlässigen technischen Bereitstellung (Art. 6 Abs. 1 lit. f DSGVO).</p>
+    <p><strong>E-Mail-Versand (Resend):</strong> Ihre Anfrage wird uns über den E-Mail-Dienst Resend, San Francisco, USA, zugestellt. Dabei werden die Inhalte Ihrer Anfrage (z. B. Name, Kontaktdaten, Nachricht) an Resend übermittelt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b und f DSGVO.</p>
+    <p>Mit beiden Anbietern besteht bzw. wird ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO geschlossen. Da die Anbieter ihren Sitz in den USA haben, kann eine Übermittlung personenbezogener Daten in die USA stattfinden. Diese erfolgt auf Grundlage der EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO) bzw., soweit der jeweilige Anbieter zertifiziert ist, auf Grundlage des EU-US Data Privacy Framework (Art. 45 DSGVO).</p>
+    <h2>5. Ihre Rechte</h2>
     <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese jederzeit für die Zukunft widerrufen.</p>
-    <h2>5. Kontakt</h2>
+    <h2>6. Cookie-Einwilligung und Google Ads Conversion-Tracking</h2>
+    <p>Diese Website nutzt Google Ads Conversion-Tracking, einen Dienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland („Google"). Damit messen wir, ob Besucher, die über eine unserer Google-Anzeigen auf unsere Website gekommen sind, uns anschließend kontaktieren (Absenden des Kontaktformulars oder Klick auf unsere Telefonnummer). So können wir den Erfolg unserer Werbung beurteilen.</p>
+    <p>Hierfür werden Cookies bzw. vergleichbare Technologien auf Ihrem Endgerät gespeichert und ausgelesen. Dies geschieht nur, wenn Sie über unser Cookie-Banner eingewilligt haben. Rechtsgrundlage ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG.</p>
+    <p>Wir verwenden den Einwilligungsmodus von Google (Consent Mode). Solange Sie nicht eingewilligt haben, werden keine Werbe-Cookies gesetzt. Google kann in diesem Fall jedoch cookielose Signale erhalten (z. B. Zeitpunkt des Aufrufs, Einwilligungsstatus, technische Browserinformationen), die keine dauerhafte Identifizierung ermöglichen und von Google zur aggregierten Modellierung von Conversions genutzt werden können.</p>
+    <p>Ihre Entscheidung wird lokal in Ihrem Browser gespeichert (localStorage). Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen oder ändern, indem Sie auf „Cookie-Einstellungen" im Fußbereich jeder Seite klicken.</p>
+    <p>Dabei kann es zu einer Übermittlung von Daten an die Google LLC in den USA kommen. Google LLC ist unter dem EU-US Data Privacy Framework zertifiziert; für die Übermittlung besteht damit ein Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO).</p>
+    <p>Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a> und <a href="https://business.safety.google/privacy/" target="_blank" rel="noopener">https://business.safety.google/privacy/</a></p>
+    <h2>7. Kontakt</h2>
     <p>Bei Fragen zum Datenschutz wenden Sie sich bitte an: <a href="mailto:info@js-besenrein.de">info@js-besenrein.de</a></p>
   </div>
 
@@ -118,9 +161,19 @@
       <div class="footer-bottom-links">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutzerklärung</a>
+        <a href="#" class="cookie-settings-link">Cookie-Einstellungen</a>
       </div>
     </div>
   </footer>
   <script src="assets/main.js"></script>
+  <script src="assets/consent.js"></script>
+<script>
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href^="tel:"]');
+    if (link && typeof gtag === 'function') {
+      gtag('event', 'conversion', { 'send_to': 'AW-346443916/xNanCOuylvkZEIyhmaUB' });
+    }
+  });
+</script>
 </body>
 </html>
